@@ -15,5 +15,6 @@ jobs:
           name: githubaction
           runtime: python38
           entry_point: telegram_bot
-          project_id: green-cell-329502
           service_account_email: example-service-account@green-cell-329502.iam.gserviceaccount.com
+      - id: test
+        run: curl "${{ steps.deploy.outputs.url }}"
