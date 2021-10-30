@@ -1,0 +1,19 @@
+name: trying-github-actions
+on:
+  push:
+    branches:
+      - main
+jobs:
+  name_of_the_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - id: Deploy
+        uses: google-github-actions/deploy-cloud-functions@main
+        with:
+          credentials: ${{ secrets.GCP_SA_KEY }}
+          name: githubaction
+          runtime: python38
+          entry_point: telegram_bot
+          project_id: green-cell-329502
+          service_account_email: example-service-account@green-cell-329502.iam.gserviceaccount.com
