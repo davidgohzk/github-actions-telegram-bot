@@ -1,4 +1,4 @@
-name: trying-github-actions
+name: github-to-gcpfunctions
 on:
   push:
     branches:
