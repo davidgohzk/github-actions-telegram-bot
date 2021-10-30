@@ -1,7 +1,7 @@
 create a Google Cloud Function running this command in the same line:
 
 ```
-gcloud functions deploy telegram_bot --set-env-vars "TELEGRAM_TOKEN=<TELEGRAM_TOKEN>" --runtime python38 --trigger-http --project=<project_name>
+gcloud alpha functions deploy telegram_bot --set-env-vars "TELEGRAM_TOKEN=<TELEGRAM_TOKEN>" --runtime python38 --trigger-http --project=<project_name> --allow-unauthenticated --set-secrets "<ENV_SECRET_NAME>=<GOOGLE_SECRET_NAME>:<VERSION_NUMBER>"
 ```
 
 you can also specify the region by appending the following string to the previous command
